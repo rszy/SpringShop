@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Przykład Tymeleaf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<a href="/">POWRÓT DO STRONY GŁÓWNEJ</a>
+<br></br>
+<a href="/add">DODAJ NOWY PRODUKT</a>
+<br></br>
+<p th:text="${title}"/>
+    <table>
+        <tr>
+            <th>Nazwa</th>
+            <th>Cena</th>
+            <th></th>
+        </tr>
+        <tr th:each="prod: ${products}">
+            <td th:text="${prod.name}">Przykładowy produkt</td>
+            <td th:text="${prod.price}">0.99</td>
+            <td><a href="#" th:href="'/cart/add?id=' + ${prod.id}">Dodaj do koszyka</a></td>
+        </tr>
+    </table>
+</body>
+</html>

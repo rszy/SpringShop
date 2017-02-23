@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/add}" method="post" th:object="${product}">
+    Nazwa: <input type="text" th:field="*{name}" /> <br/>
+    Cena: <input type="text" th:field="*{price}" /> <br/>
+    <input type="submit" value="Dodaj" />
+</form>
+
+</body>
+</html>
